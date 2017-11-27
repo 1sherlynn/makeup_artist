@@ -1,0 +1,44 @@
+<!--============== preloader ==============-->
+<!-- <div class="preloader">
+  <div class="animation circle"></div>
+</div> -->
+<!--============== end preloader ==============-->
+<nav class="navbar navbar-default bootsnav">
+  <div class="container">
+    <!-- Start Header Navigation -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"> <i class="fa fa-bars"></i> </button>
+      <a class="navbar-brand" href="index.html"><%= image_tag("logo.png", class: 'logo', alt: '') %>
+      </a> </div>
+
+        
+    <!-- End Header Navigation -->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-menu">
+      <ul class="nav navbar-nav navbar-right" data-in="fadeInUp" data-out="fadeOutDown">
+        <li><%= link_to "Home", root_path %></li>
+        <li>
+        <%= link_to "About", about_path %>
+        </li>
+        <li class="dropdown"> <a href="services.html" class="dropdown-toggle" data-toggle="dropdown">Services</a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Bridal Makeup", single_service_path %></li>
+            <li><%= link_to "TV Film Commercial", single_service_path %></li>
+            <li><%= link_to "Special occasions", single_service_path %></li>
+          </ul>
+        </li>
+        <li><%= link_to "Portfolio", portfolio_path %></li>
+        <li class="dropdown"> <a href="blog.html" class="dropdown-toggle" data-toggle="dropdown">Blog</a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Left Sidebar", blog_left_sidebar_path %></li>
+            <li><%= link_to "Single Post", post_path %></li>
+          </ul>
+        </li>
+        <li><%= link_to "Contact Us", contact_path %></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!--container-->
+</nav>
+<!--navbar-->

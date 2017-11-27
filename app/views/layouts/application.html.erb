@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MakeupArtist</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento:400,700|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i">
+
+  </head>
+
+  <body>
+
+  <%= render 'layouts/header' %>
+  
+ <!-- flash start --> 
+  	<% flash.each do |name, msg| %>
+  		<%= content_tag :div, msg, class: "alert alert-info"%>
+  	 <% end %>
+<!-- flash end --> 
+
+    <%= yield %>
+
+  <%= render 'layouts/footer' %>
+
+  </body>
+</html>
