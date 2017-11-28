@@ -50,6 +50,10 @@ a {
   color: #e26091;
 }
 
+a:link    {
+  text-decoration:  none;
+  } 
+
 a:hover,
 a:focus {
   text-decoration: none;
@@ -64,6 +68,8 @@ a,
   -ms-transition: all 0.35s linear;
   -o-transition: all 0.35s linear;
   transition: all 0.35s linear;
+  
+
 }
 
 h1,h2,h3,h4,h5,h6 {

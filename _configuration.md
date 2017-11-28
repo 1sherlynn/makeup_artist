@@ -33,7 +33,9 @@ Need to look at how that affects everything.
 ___________________________________________
 
 PROBLEM
+images rendering
 SOLUTION
+<section class="section section-page-title" style="background-image:url(assets/about.jpg)">
 ___________________________________________
 
 PROBLEM

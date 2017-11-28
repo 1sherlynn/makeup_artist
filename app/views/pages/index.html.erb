@@ -9,7 +9,9 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item"> 
-    <%= image_tag("slide1.jpg", alt: "First Image") %>
+
+    <% @indices.each do |index| %>
+    <%= image_tag(index.slider1, alt: "First Image") %>
       <div class="carousel-caption">
         <div class="carousel-caption-inner">
           <div class="container">
@@ -28,12 +30,13 @@
     </div>
     <!--item 1-->
     <div class="item"> 
-    <%= image_tag("slide2.jpg", alt: "") %>
+    <%= image_tag(index.slider2, alt: "") %>
+    
       <div class="carousel-caption">
         <div class="carousel-caption-inner">
           <div class="container">
             <div class="row">
-              <div class="col-md-5">
+              <div class="col-md-5 col-md-offset-5">
                 <h1>Professional<br/>
                   Makeup Artist</h1>
                 <p>Whatever the occasion is, be sure that <strong>my professional</strong> makeup work and products will make you <strong>shine </strong>and stand out!</p>
@@ -59,88 +62,78 @@
   <!-- end section-title -->
   <div class="container">
     <div class="row">
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-3 col-sm-6">
         <div class="service-box service-color-one">
           <div class="service-img">
-          <%= image_tag("service1.jpg", alt: "") %>
+          <%= image_tag(index.service_image, alt: "") %>
           </div>
           <div class="service-contents">
-            <h1>Bridal Makeup</h1>
-            <p>Considering just how important the makeup arts are for these industries, the quality of my work was required to match the class. After hundreds of sessions it seems it did!</p>
-            <p class="service-price pb-10"><span class="decor-text">starts from</span> <strong>$156.00</strong></p>
+            <h1><%= index.service_title %></h1>
+            <p><%= index.description %></p>
+            <p class="service-price pb-10"><span class="decor-text">starts from</span> <strong>
+            <%= number_to_currency index.price %></strong></p>
             <a class="btn btn-primary" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i> </a> </div>
           <!--service-contents-->
         </div>
         <!--service-box-->
       </div>
-      <!--col-md-4-->
-      <div class="col-md-4 col-sm-6">
+      <!--col-md-3-->
+      <div class="col-md-3 col-sm-6">
         <div class="service-box service-color-two">
           <div class="service-img">
-          <%= image_tag("service1.jpg", alt: "") %>
+          <%= image_tag(index.service_image2, alt: "") %>
           </div>
           <div class="service-contents">
-            <h1>tv film commercial</h1>
-            <p>Considering just how important the makeup arts are for these industries, the quality of my work was required to match the class. After hundreds of sessions it seems it did!</p>
-            <p class="service-price pb-10"><span class="decor-text">starts from</span> <strong>$156.00</strong></p>
+            <h1><%= index.service_title2 %></h1>
+            <p><%= index.description2 %></p>
+            <p class="service-price pb-10"><span class="decor-text">starts from</span> <strong>
+            <%= number_to_currency index.price2 %></strong></p>
             <a class="btn btn-primary" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i> </a> </div>
           <!--service-contents-->
         </div>
         <!--service-box-->
       </div>
-      <!--col-md-4-->
-      <div class="col-md-4 col-sm-6">
+      <!--col-md-3-->
+      <div class="col-md-3 col-sm-6">
         <div class="service-box service-color-three">
           <div class="service-img">
-          <%= image_tag("service1.jpg", alt: "") %>
+          <%= image_tag(index.service_image3, alt: "") %>
           </div>
           <div class="service-contents">
-            <h1>Special occasions</h1>
-            <p>Considering just how important the makeup arts are for these industries, the quality of my work was required to match the class. After hundreds of sessions it seems it did!</p>
-            <p class="service-price pb-10"><span class="decor-text">starts from</span> <strong>$156.00</strong></p>
+            <h1><%= index.service_title3 %></h1>
+            <p><%= index.description3 %></p>
+            <p class="service-price pb-10"><span class="decor-text">starts from</span> <strong>
+            <%= number_to_currency index.price3 %></strong></p>
+            <a class="btn btn-primary" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i> </a> </div>
+          <!--service-contents-->
+       
+        </div>
+        <!--service-box-->
+      </div>
+      <!--col-md-3-->
+       <!--col-md-3-->
+      <div class="col-md-3 col-sm-6">
+        <div class="service-box service-color-two">
+          <div class="service-img">
+          <%= image_tag(index.service_image2, alt: "") %>
+          </div>
+          <div class="service-contents">
+            <h1><%= index.service_title2 %></h1>
+            <p><%= index.description2 %></p>
+            <p class="service-price pb-10"><span class="decor-text">starts from</span> <strong>
+            <%= number_to_currency index.price2 %></strong></p>
             <a class="btn btn-primary" href="#">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i> </a> </div>
           <!--service-contents-->
         </div>
         <!--service-box-->
       </div>
-      <!--col-md-4-->
     </div>
+     <% end %>
     <!--row-->
   </div>
   <!--container-->
 </section>
 <!--section-services-->
-<section id="gallery" class="section section-gallery pt-zero">
-  <!-- section-title -->
-  <div class="section-title text-center">
-    <br>
-    <h1 class="text-center decor">My Awesome <span>Portfolio</span></h1>
-  </div>
-  <!-- end section-title -->
-  <div class="container">
-    <!-- Portfolio items -->
-    <ul class="portfolio-filter list-inline text-center">
-      <li class="current"><a href="" data-filter="*">All Works</a></li>
-      <li class=""><a href="" data-filter=".wedding">Wedding</a></li>
-      <li class=""><a href="" data-filter=".fashion">Hairstyle</a></li>
-      <li class=""><a href="" data-filter=".nature">Commercial</a></li>
-      <li class=""><a href="" data-filter=".studio">Studio</a></li>
-    </ul>
-    <div class="portfolio-items row">
-      <div class="portfolio-item item height-2x fashion col-xs-12 col-sm-6 col-md-4">
-        <div class="a-img" style="background-image: url(/assets/gallery/1.jpg);"></div>
-
-        <a href="gallery/1.jpg" class="mfp-image"><i class="fa fa-search"></i></a> </div>
-      <div class="portfolio-item item wedding col-xs-12 col-sm-6 col-md-4">
-        <div class="a-img" style="background-image: url(/assets/gallery/2.jpg);"></div>
-        <a href="gallery/2.jpg" class="mfp-image"><i class="fa fa-search"></i></a> </div>
-  
-    </div>
-    <!-- END Portfolio items -->
-  </div>
-  <!--container-->
-</section>
-<!--section-gallery-->
 
 <section id="news" class="section section-blog">
   <!-- section-title -->
@@ -150,7 +143,7 @@
   <!-- end section-title -->
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="post-entry">
           <div class="post-thumbnail"> 
           <%= image_tag("blog/placeholder.jpg", alt: "") %>
@@ -166,7 +159,7 @@
         <!--post-entry-->
       </div>
       <!--end col-->
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="post-entry">
           <div class="post-thumbnail"> 
           <%= image_tag("blog/placeholder.jpg", alt: "") %>
@@ -182,111 +175,13 @@
         <!--post-entry-->
       </div>
       <!--end col-->
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-        <div class="post-entry">
-          <div class="post-thumbnail"> 
-          <%= image_tag("blog/placeholder.jpg", alt: "") %>
-          <a href="#"> <i class="fa fa-link"></i> </a> </div>
-          <!--post-thumbnial-->
-          <h2> <a href="#">Winterish version of rainbow hair?</a> </h2>
-          <ul class="entry-meta">
-            <li> <i class="fa fa-calendar"></i>07 June 2014 </li>
-            <li> <i class="fa fa-comments"></i> <a href="#">3 Comments</a> </li>
-          </ul>
-          <p>In recent years, an increasingly big number of African American women take a fashion decision to return to their natural... </p>
-          <a class="btn btn-primary" href="post.html">Read More </a> </div>
-        <!--post-entry-->
-      </div>
-      <!--end col-->
     </div>
     <!--row-->
   </div>
   <!--container-->
 </section>
 <!--section-blog-->
-<section class="section section-logos pt-zero">
-  <!-- section-title -->
-  <div class="section-title text-center">
-  <br>
-    <h1 class="decor">Featured <span>on</span></h1>
-  </div>
-  <!-- end section-title -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center">
-        <div class="cleint-logo"> 
-        <%= image_tag("logos/logo1.png", alt: "") %>
-        </div>
-      </div>
-      <!--end col-->
-      <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center">
-        <div class="cleint-logo"> 
-        <%= image_tag("logos/logo2.png", alt: "") %>
-        </div>
-      </div>
-      <!--end col-->
-      <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center">
-        <div class="cleint-logo"> 
-        <%= image_tag("logos/logo3.png", alt: "") %>
-        </div>
-      </div>
-      <!--end col-->
-      <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center">
-        <div class="cleint-logo"> 
-        <%= image_tag("logos/logo4.png", alt: "") %>
-        </div>
-      </div>
-      <!--end col-->
-      <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center">
-        <div class="cleint-logo"> 
-        <%= image_tag("logos/logo5.png", alt: "") %>
-        </div>
-      </div>
-      <!--end col-->
-      <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6 text-center">
-        <div class="cleint-logo"> 
-        <%= image_tag("logos/logo6.png", alt: "") %>
-        </div>
-      </div>
-      <!--end col-->
-    </div>
-    <!--row-->
-  </div>
-  <!--container-->
-</section>
-<!--section-logo-->
-<footer>
-  <section class="section footer-primary">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3 text-center">
-          <h3 class="pb-10">Let's Stay Connected</h3>
-          <div class="footer-social-icons"> <a href="#" target="_blank"><i class="fa fa-facebook"></i></a> <a href="#" target="_blank"><i class="fa fa-twitter"></i></a> <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a> <a href="#" target="_blank"><i class="fa fa-instagram"></i></a> <a href="#" target="_blank"><i class="fa fa-google-plus"></i></a> </div>
-        </div>
-        <!--col-->
-      </div>
-      <!--row-->
-    </div>
-    <!--container-->
-  </section>
-  <!--footer-primary-->
-  <section class="section footer-copyright">
-    <div class="container">
-      <ul class="footer-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-      <p>&copy; 2017 Sherlynn Tan.</p>
-    </div>
-    <!--container-->
-  </section>
-  <!--footer-primary-->
-</footer>
-<a class="goto-top"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
-<!--go to top-->
+
 
 </body>
 </html>

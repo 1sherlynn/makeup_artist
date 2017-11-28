@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slider1: MyString
+  slider2: MyString
+  service_title: MyString
+  description: MyText
+  price: 9.99
+  service_image: MyString
+
+two:
+  slider1: MyString
+  slider2: MyString
+  service_title: MyString
+  description: MyText
+  price: 9.99
+  service_image: MyString

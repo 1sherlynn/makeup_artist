@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171127121126) do
+ActiveRecord::Schema.define(version: 20171128041939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abouts", force: :cascade do |t|
+    t.string "header_image"
+    t.string "header_title"
+    t.string "image"
+    t.string "title"
+    t.text "paragraph1"
+    t.text "paragraph2"
+    t.text "paragraph3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -46,6 +58,25 @@ ActiveRecord::Schema.define(version: 20171127121126) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "indices", force: :cascade do |t|
+    t.string "slider1"
+    t.string "slider2"
+    t.string "service_title"
+    t.text "description"
+    t.decimal "price"
+    t.string "service_image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "service_title2"
+    t.text "description2"
+    t.decimal "price2", default: "0.0"
+    t.string "service_image2"
+    t.string "service_title3"
+    t.text "description3"
+    t.decimal "price3", default: "0.0"
+    t.string "service_image3"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -59,6 +90,7 @@ ActiveRecord::Schema.define(version: 20171127121126) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

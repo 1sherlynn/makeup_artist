@@ -1,8 +1,10 @@
 class PagesController < ApplicationController
   def index
+  	@indices = Index.all
   end
 
   def about
+  	@abouts = About.all
   end
 
   def portfolio
@@ -25,5 +27,6 @@ class PagesController < ApplicationController
 
   def blog_left_sidebar
   end
+
 
 end

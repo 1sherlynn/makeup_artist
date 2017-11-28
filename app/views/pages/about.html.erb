@@ -1,7 +1,8 @@
 <body>
-<section class="section section-page-title" style="background-image:url(assets/about.jpg)">
+<% @abouts.each do |about| %>
+<section class="section section-page-title" style="background-image:url('<%= image_url(about.header_image) %>')">
   <div class="overlay">
-    <h1>About Me</h1>
+    <h1><%= about.header_title %></h1>
   </div>
   <!--overlay-->
 </section>
@@ -10,32 +11,29 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
-      <%= image_tag("service1.jpg", alt: "") %>
+      <%= image_tag(about.image, alt: "")%>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 pt-30">
-        <h1>About <span>me</span></h1>
-        <p>Nulla interdum elit a nunc fermentum, quis sodales nibh pulvinar. Etiam rhoncus dui eget nisl laoreet, id scelerisque odio eleifend. Quisque accumsan porta lacinia. Etiam tristique mattis rutrum. Sed vitae laoreet lectus. Donec sed elit felis. Fusce laoreet nec ante sit amet interdum. </p>
-        <blockquote>
-          <p>Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat ut wisi enim ad minim .</p>
-        </blockquote>
-        <p>Nulla interdum elit a nunc fermentum, quis sodales nibh pulvinar. Etiam rhoncus dui eget nisl laoreet, id scelerisque odio eleifend. Quisque accumsan porta lacinia. Etiam tristique mattis rutrum. Sed vitae laoreet lectus. Donec sed elit felis. Fusce laoreet nec ante sit amet interdum. </p>
-        <p>Nulla interdum elit a nunc fermentum, quis sodales nibh pulvinar. Etiam rhoncus dui eget nisl laoreet, id scelerisque odio eleifend. Quisque accumsan porta lacinia. Etiam tristique mattis rutrum. Sed vitae laoreet lectus. Donec sed elit felis. Fusce laoreet nec ante sit amet interdum. </p>
+        <h1><%= about.title %></h1>
+        
+        <p>
+        <%= about.paragraph1 %>
+        </p>
+     
+        <p>
+        <%= about.paragraph2 %>
+        </p>
+
+        <p>
+        <%= about.paragraph3 %> 
+        </p>
+        <% end %>
+
         <a href="about.html" class="btn btn-primary">View Portfolio</a> </div>
     </div>
   </div>
 </section>
 <!--section_about-->
-<section class="section parallax">
-  <div class="overlay">
-    <div class="container">
-      <h1 class="pb-20">Offering Makeup and Hair Stylist Services</h1>
-      <p class="max-500 intro pb-20">Japanese nail art design is a trend that increases its popularity every year. It plays a major role in trend-setting fashion, and is the top choice in nail art competitions. </p>
-      <a class="btn btn-primary btn-rounded btn-pink" href="#">Book Now!</a> </div>
-    <!--container-->
-  </div>
-  <!--overlay-->
-</section>
-<!--section-paralax-->
 
 </body>
 </html>
